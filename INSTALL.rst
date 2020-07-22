@@ -18,9 +18,9 @@ Prerequisites
 
 You need the following libraries and/or programs:
 
-* `Python`_ 3.6 or above
+* `Python`_ 3.8 or above
 * Python `Virtualenv`_ and `Pip`_
-* `PostgreSQL`_ 10 or above
+* `PostgreSQL`_ 12 or above
 * `Node.js`_
 * `npm`_
 
@@ -44,7 +44,7 @@ development machine.
 
    .. code-block:: bash
 
-       $ git clone git@bitbucket.org:maykinmedia/boilerplate.git
+       $ git clone git@github.com:GemeenteUtrecht/boilerplate.git
        $ cd boilerplate
 
 3. Install all required libraries.
@@ -55,14 +55,12 @@ development machine.
        $ source env/bin/activate
        $ pip install -r requirements/dev.txt
 
-4. Install the front-end CLI tool `gulp`_ if you've never installed them
-   before and install the frontend libraries:
+4. Install the frontend libraries:
 
    .. code-block:: bash
 
-       $ npm install -g gulp
        $ npm install
-       $ gulp sass
+       $ npm run build
 
 5. Activate your virtual environment and create the statics and database:
 
@@ -91,15 +89,18 @@ development machine.
 
 
 **Note:** If you are making local, machine specific, changes, add them to
-``src/boilerplate/conf/local.py``. You can base this file on the
+``src/boilerplate/conf/includes/local.py``. You can base this file on the
 example file included in the same directory.
 
-**Note:** You can run watch-tasks to compile `Sass`_ to CSS and `ECMA`_ to JS
-using `gulp`_. By default this will compile the files if they change.
+**Note:** You can run the watch script to compile `Sass`_ to CSS and `ECMA`_ to JS
+using Webpack. By default this will compile the files if they change.
+
+    .. code-block:: bash
+
+       $ npm run watch
 
 .. _ECMA: https://ecma-international.org/
 .. _Sass: https://sass-lang.com/
-.. _gulp: https://gulpjs.com/
 
 
 Update installation
@@ -121,7 +122,7 @@ When updating an existing installation:
        $ git pull
        $ pip install -r requirements/dev.txt
        $ npm install
-       $ gulp sass
+       $ npm run build
 
 3. Update the statics and database:
 
@@ -138,7 +139,7 @@ To run the test suite:
 
 .. code-block:: bash
 
-    $ python src/manage.py test boilerplate
+    $ python src/manage.py test src
 
 Configuration via environment variables
 ---------------------------------------
@@ -169,7 +170,7 @@ The easiest way to get the project started is by using `Docker Compose`_.
 
    .. code-block:: bash
 
-       $ git clone git@bitbucket.org:maykinmedia/boilerplate.git
+       $ git clone git@github.com:GemeenteUtrecht/boilerplate.git
        Cloning into 'boilerplate'...
        ...
 
@@ -223,7 +224,7 @@ The easiest way to get the project started is by using `Docker Compose`_.
    system you can run ``docker system prune``.
 
 .. _Docker Compose: https://docs.docker.com/compose/install/
-.. _Github: https://github.com/maykinmedia/boilerplate/
+.. _Github: https://github.com/GemeenteUtrecht/boilerplate/
 
 
 More Docker
