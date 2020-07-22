@@ -7,7 +7,7 @@ Boilerplate Django project
 :Keywords: django, boilerplate
 :PythonVersion: 3.8
 
-|build-status| |black|
+|build-status| |docs| |black|
 
 Boilerplate Django project for prototyping.
 
