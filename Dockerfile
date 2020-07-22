@@ -58,6 +58,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 COPY ./bin/docker_start.sh /start.sh
+COPY ./bin/docker_start_dev.sh /start_dev.sh
 RUN mkdir /app/log
 RUN mkdir /app/media
 
