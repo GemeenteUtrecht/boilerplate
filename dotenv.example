@@ -1,0 +1,10 @@
+SECRET_KEY="myt*!t*9)9_&(qj*777=4js^@+ml@(_l2!j8p61_qg=3fb-*ew"
+DB_NAME="boilerplate"
+DB_USER="boilerplate"
+#
+# For peer authentication via unix domain socket
+# these should be kept empty.
+#
+DB_PASSWORD=""
+DB_HOST=""
+DB_PORT=""

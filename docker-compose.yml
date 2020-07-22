@@ -1,0 +1,29 @@
+# Inspired by https://docs.docker.com/compose/django/
+version: '3'
+
+services:
+  db:
+    image: postgres:12
+    volumes:
+      - db:/var/lib/postgres
+      - ./docker-init-db.sql:/docker-entrypoint-initdb.d/init_db.sql
+
+  redis:
+    image: redis:5
+
+  web:
+    build: .
+    image: scrumteamzgw/boilerplate
+    environment:
+      - DJANGO_SETTINGS_MODULE=boilerplate.conf.docker
+      - SECRET_KEY=${SECRET_KEY:-myt*!t*9)9_&(qj*777=4js^@+ml@(_l2!j8p61_qg=3fb-*ew}
+      - CACHE_DEFAULT=redis:6379/0
+      - CACHE_AXES=redis:6379/1
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+      - redis
+
+volumes:
+  db:
