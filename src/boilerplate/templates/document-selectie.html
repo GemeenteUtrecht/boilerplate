@@ -15,15 +15,22 @@
 {# requires access to the body element -> load as soon as possible #}
 <script src="{% static 'vendor/contezza/documentlist.js' %}"></script>
 
-<h1>Static page load</h1>
 <div class="doc-list-container">
     <contezza-documentlist
+        id="doclist"
         username="admin"
         password="5x5HFSg3"
-        mode="search"
+        mode="false"
         rootfolder="-root-"
         zaaktypeurl="https://openzaak.utrechtproeftuin.nl/catalogi/api/v1/zaaktypen/c94eaea5-585a-4c53-a5c5-f882f2ba6b26"
         bronorganisatie="002220647"
     />
 </div>
+
+<script>
+var node = document.getElementById('doclist');
+node.addEventListener('callbackurl', (event) => {
+    alert(`Document URL: ${event.detail}`);
+});
+</script>
 {% endblock content %}
