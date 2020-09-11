@@ -7,6 +7,8 @@ def settings(request):
         "ENVIRONMENT",
         "SHOW_ALERT",
         "PROJECT_NAME",
+        "ALFRESCO_USERNAME",
+        "ALFRESCO_PASSWORD",
     )
 
     context = {

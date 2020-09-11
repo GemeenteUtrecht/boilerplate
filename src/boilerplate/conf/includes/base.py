@@ -366,3 +366,9 @@ if SENTRY_DSN:
     sentry_sdk.init(
         **SENTRY_CONFIG, integrations=SENTRY_SDK_INTEGRATIONS, send_default_pii=True
     )
+
+#
+# Alfresco creds
+#
+ALFRESCO_USERNAME = config("ALFRESCO_USERNAME", "")
+ALFRESCO_PASSWORD = config("ALFRESCO_PASSWORD", "")

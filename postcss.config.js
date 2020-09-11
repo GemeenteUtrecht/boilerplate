@@ -24,7 +24,10 @@ let selectorLintConfig = {
     },
 
     options: {
-        excludedFiles: ['admin_overrides.scss'],
+        excludedFiles: [
+            'admin_overrides.scss',
+            'vendor.scss',
+        ],
     }
 };
 
