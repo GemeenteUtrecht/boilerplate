@@ -1,0 +1,29 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block extra_css %}
+{# fonts - used in alfresco document list #}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+{# vendor styles #}
+<link href="{% static 'bundles/vendor.css' %}" media="all" rel="stylesheet" />
+<base href="{% static 'vendor/contezza/' %}" />
+{% endblock extra_css %}
+
+
+{% block content %}
+{# requires access to the body element -> load as soon as possible #}
+<script src="{% static 'vendor/contezza/documentlist.js' %}"></script>
+
+<h1>Static page load</h1>
+<div class="doc-list-container">
+    <contezza-documentlist
+        username="admin"
+        password="5x5HFSg3"
+        mode="search"
+        rootfolder="-root-"
+        zaaktypeurl="https://openzaak.utrechtproeftuin.nl/catalogi/api/v1/zaaktypen/c94eaea5-585a-4c53-a5c5-f882f2ba6b26"
+        bronorganisatie="002220647"
+    />
+</div>
+{% endblock content %}

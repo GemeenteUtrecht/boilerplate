@@ -39,6 +39,11 @@ urlpatterns = [
     path("adfs/", include("django_auth_adfs.urls")),
     # Simply show the master template.
     path("", TemplateView.as_view(template_name="master.html"), name="index"),
+    path(
+        "doc-list/",
+        TemplateView.as_view(template_name="document-selectie.html"),
+        name="doc-list",
+    ),
 ]
 
 # NOTE: The staticfiles_urlpatterns also discovers static files (ie. no need to run collectstatic). Both the static
